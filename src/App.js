@@ -3,6 +3,14 @@ import axios from 'axios';
 import "./App.css";
 import APODCard from "./components/APODCard.js";
 import APODList from "./components/APODList";
+import styled from 'styled-components';
+import Button from "./components/Button"
+
+const WrapperDiv = styled.div`
+font-family: sans-serif;
+text-align: center;
+color: purple;
+`;
 
 function App() {
   const [image, setImage] = useState({});
@@ -18,13 +26,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <WrapperDiv>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun okay sounds good! <span role="img" aria-label='go!'>🚀</span>!
       </p>
+      {/* //<Button></Button> */}
       <APODCard image={image} />
-    </div>
+      <Button type="primary">Primary</Button>
+    </WrapperDiv>
   );
 }
 
